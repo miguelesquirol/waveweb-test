@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-//
 import Layout from './components/Layout/Layout'
-import Search from './containers/Search/Search'
 import SearchResult from './containers/SearchResult/SearchResult'
 import { Multiselect } from 'multiselect-react-dropdown';
 import InputRange from 'react-input-range';
@@ -10,7 +8,7 @@ import 'react-input-range/lib/css/index.css'
 import './App.scss';
 
 
-class App extends Component {
+class Discover extends Component {
 
   componentDidMount() {
     fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${global.apikey}&language=en-US&page=${this.state.pageNumber}`)
@@ -21,54 +19,9 @@ class App extends Component {
         })
       })
       .catch(console.log)
-
   }
-
-
-
-  searchChangeHandler = (event) => {
-    this.setState({ input: event.target.value })
-  }
-
-  onNext = (event) => {
-    var newPageNumber = this.state.pageNumber + 1;
-    console.log(this.state.pageNumber)
-    this.setState({
-      pageNumber: newPageNumber
-    })
-  }
-
-  searchClickHandler = (event) => {
-    this.setState({
-      search: "Searching " + this.state.input
-    })
-    this.onSelect();
-  }
-
-
-
-  searchData = (event) => {
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${global.apikey}&language=en-US&page=${this.state.pageNumber}&include_adult=false&query=${this.state.input}`)
-      .then(res => res.json())
-      .then((data) => {
-        this.setState({
-          films: data,
-          discover: false,
-        })
-      })
-      .catch(console.log)
-  }
-
-  discoverData = (event) => {
-
-   
-  }
-
-
-  
 
 onSelect = (selectedList, selectedItem) => {
-  console.log("what")
   // Genres
   let genreList = this.state.genresSelected;
   if (selectedList){
@@ -93,23 +46,6 @@ onSelect = (selectedList, selectedItem) => {
 
   render() {
 
-    function ShowNext() {
-      return <button onClick={() => { this.onNext(); this.onSelect(); }}>Next Page</button>;
-    }
-
-
-    function ShowNavigation(props) {
-      if (props.discover) {
-        return <ShowNext />;
-      }
-      return "";    
-    }
-
-
-    function logOnChange(state) {
-      console.log(state.value);
-    }
-
 
     return (
 
@@ -131,11 +67,6 @@ onSelect = (selectedList, selectedItem) => {
           value={this.state.value}
           onChange={value => {this.setState({ value }); this.onSelect() }  }/>
 
-        <SearchResult search={this.state.search} filmlist={this.state.films.results} />
-
-        <ShowNavigation discover={this.state.discover}/>
-        
-
       </Layout>
 
     )
@@ -156,4 +87,4 @@ onSelect = (selectedList, selectedItem) => {
 
 }
 
-export default App;
+export default Discover;
