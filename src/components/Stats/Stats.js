@@ -5,6 +5,10 @@ import BarChart from "../../containers/BarChart/BarChart";
 import Discover from "../../containers/Discover/Discover";
 import "./Stats.scss";
 
+
+// Stats page, whose results can be also filtered
+
+
 class Stats extends Component {
   componentDidMount() {
     fetch(

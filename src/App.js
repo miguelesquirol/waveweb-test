@@ -9,6 +9,9 @@ import "./global.js";
 import "react-input-range/lib/css/index.css";
 import "./App.scss";
 
+
+// Home page, and function that permits to show/hide the inputs accordingly.
+
 class App extends Component {
   handleClick = () => {
     console.log("click");

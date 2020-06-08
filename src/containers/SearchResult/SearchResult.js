@@ -6,6 +6,7 @@ import Aux from '../../hoc/Aux'
 const SearchResult = (props) => {
         return (
 
+          // Component that Displays the results of the search/discover
 
             <Aux>
                 <h1 className="SearchTitle"> {props.search}</h1>

@@ -22,3 +22,4 @@ I used the framework D3 for the graphics, and a couple of small dependencies for
 - The movie details page is also basic, and there's some missing information like Cast or Similar Movies. This implementation should be fairly straight forward.
 - The "star" in the movies page to Rate the film, is just front end, and it will need a call to API or DB to be able to implement it correctly.
 - Responsiveness: Because of the time contraint, the responsiveness is minimal. A new d3 graphic would need to be created to properly display in mobile. SVG is not a responsive-friendly format.
+- Cleanup: The code needs some clean up, the are some variables and console.logs leftofvers, as well as missing Comments.

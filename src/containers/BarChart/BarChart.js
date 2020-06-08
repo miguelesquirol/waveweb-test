@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import * as d3 from "d3";
 import "./BarChart.scss"
 
-// margin convention often used with D3
+// BarChart that can be reused
 
 class BarChart extends Component {
   drawChart() {

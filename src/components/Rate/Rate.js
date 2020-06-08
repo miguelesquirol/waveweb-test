@@ -4,6 +4,7 @@ import Star from "../../assets/star.svg";
 import StarHover from "../../assets/star-hover.svg";
 
 
+// Rate Component with a mock call to API
 
   class Rate extends React.Component {
 

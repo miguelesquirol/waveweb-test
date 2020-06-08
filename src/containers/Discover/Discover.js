@@ -6,6 +6,9 @@ import "../../global.js";
 import "react-input-range/lib/css/index.css";
 import "./Discover.scss";
 
+
+// Component to Discover  movies accoring decades and genres.
+
 class Discover extends Component {
   componentDidMount() {
     fetch(

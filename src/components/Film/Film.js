@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./Film.scss";
 import noPoster from '../../assets/no-poster.jpg';
 
+
+// Film in the results
+
 const Films = (props) => {
   function Poster(props) {
     if (props.poster == null) {

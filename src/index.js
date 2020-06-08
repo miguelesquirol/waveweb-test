@@ -9,6 +9,9 @@ import Stats from "./components/Stats/Stats";
 import "./index.scss";
 import Logo from "./assets/logo.png";
 
+
+// Router and Menu
+
 const routing = (
   <Router>
     <div>

@@ -5,6 +5,8 @@ import  './Search.scss'
 
 class Search extends Component {
 
+  // Component to Look for specific movie by name
+
     searchData = (event) => {
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=${global.apikey}&language=en-US&page=${this.state.pageNumber}&include_adult=false&query=${this.state.input}`)
           .then(res => res.json())

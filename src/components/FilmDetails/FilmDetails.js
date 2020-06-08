@@ -6,6 +6,8 @@ import Rate from "../Rate/Rate"
 import noPoster from '../../assets/no-poster.jpg';
 
 
+// Page with the details of each Film
+
 class FilmsDetails extends Component {
   componentDidMount() {
     fetch(

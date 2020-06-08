@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as d3 from "d3";
 
-// margin convention often used with D3
+// Donut Chart that can be reused
 
 class Donut extends Component {
   drawChart() {
@@ -28,7 +28,6 @@ class Donut extends Component {
       .append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-    // Create dummy data
     const data = { "Vote Average": value, "": scale };
 
     // set the color scale
