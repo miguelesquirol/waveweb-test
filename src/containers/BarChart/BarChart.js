@@ -11,9 +11,10 @@ class BarChart extends Component {
     let maxValue = 0;
     const title = this.props.title;
     const val = this.props.val;
+    const divanchor = "." + this.props.class;
+    const tolltipTitle = this.props.tolltipTitle;
 
     if (this.props.filmlist) {
-      console.log(title);
 
       for (i = 0; i < 9; i++) {
         if (this.props.filmlist[i][val] > maxValue) {
@@ -30,8 +31,11 @@ class BarChart extends Component {
       height = 450 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
-    const svg = d3
-      .select(".myDiv")
+    d3.selectAll(divanchor + " svg").remove();
+  
+
+    const svg = d3  
+      .select(divanchor)
       .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -55,6 +59,7 @@ class BarChart extends Component {
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x))
       .selectAll("text")
+      .style("font-size", "12px")
       .attr("transform", "translate(-10,0)rotate(-45)")
       .style("text-anchor", "end");
 
@@ -70,9 +75,9 @@ class BarChart extends Component {
       .append("rect")
       .attr("x", function (d) {
         return x(d.Title);
-      })
+      })      
       .attr("width", x.bandwidth())
-      .attr("fill", "#69b3a2")
+      .attr("fill", "#9395D3")
       // no bar at the beginning thus:
       .attr("height", function (d) {
         return height - y(0);
@@ -83,20 +88,17 @@ class BarChart extends Component {
       .on("mousemove", function (d) {
         console.log("tooltip");
 
-        d3.select(this).attr("fill", "#588C73");
+        d3.select(this).attr("fill", "#B3B7EE");
         tooltip
           .style("left", d3.event.pageX - 50 + "px")
           .style("top", d3.event.pageY - 70 + "px")
           .style("display", "inline-block")
-          .html(
-            d.Value
-                      );
+          .html( "<strong> " + d.Title + "</strong><br/> " + d.Value + " " + tolltipTitle  );
       })
       .on("mouseout", function (d, i) {
         tooltip.style("display", "none");
-        d3.select(this).attr("fill", function (d) {
-          
-            return "#69b3a2";
+        d3.select(this).attr("fill", function (d) {          
+            return "#9395D3";
          
         });
       });
@@ -138,7 +140,7 @@ class BarChart extends Component {
   render() {
     this.drawChart();
 
-    return <div className="myDiv"></div>;
+    return <div className={this.props.class}></div>;
   }
 }
 

@@ -70,6 +70,8 @@ class Discover extends Component {
       chips: {
         // To change css chips(Selected options)
         background: "#9395D3",
+        fontSize: "18px",
+        padding: "10px 20px"
       },
       searchBox: {
         margin: "0",
@@ -92,6 +94,7 @@ class Discover extends Component {
       multiselectContainer: {
         width: "100%",
       },
+     
     };
 
     return (
@@ -101,6 +104,7 @@ class Discover extends Component {
           <div className="multiselect">
 
           <h3>Choose your Genres</h3>
+          <p>(You can combine genres)</p>
           <Multiselect
             style={divStyle}
             options={this.state.genres.genres}
@@ -145,7 +149,7 @@ class Discover extends Component {
       pageNumber: 1,
       selectedValues: "",
       discover: "discover",
-      value: { min: 2000, max: 2020 },
+      value: { min: 1990, max: 2000 },
     };
 
     this.onSelect = this.onSelect.bind(this);

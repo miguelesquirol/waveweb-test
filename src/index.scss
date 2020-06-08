@@ -1,9 +1,9 @@
 @import "./variables.scss";
 
 body {
-    margin: 0px;
-    padding: 0px;
-    background: linear-gradient(
+  margin: 0px;
+  padding: 0px;
+  background: linear-gradient(
       45deg,
       rgba(99, 165, 225, 0.5) 0%,
       rgba(99, 165, 225, 0.5) 14.286%,
@@ -45,23 +45,31 @@ body {
 
 .Menu {
   width: 100%;
-  background: #eee;
+  background: #000;
   display: flex;
   align-items: center;
 
   img {
-      width: 50px;
-      height: auto;
-      margin: 20px;
+    width: 50px;
+    height: auto;
+    margin: 20px;
   }
   ul {
     display: flex;
     padding: 0px;
 
     li {
-        padding: 20px;
-        list-style-type: none;
+      padding: 20px;
+      list-style-type: none;
+
+      a {
+        color: #fff;
+        font-size: 20px;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
-

@@ -1,56 +1,84 @@
 @import "../../variables.scss";
 
-
 .Discover {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: calc(100% - 40px);
-    padding: 20px;
-      
-    h2 {
-        text-align: center;
-        color: $color1;
-        font-size: 40px;
-        width: 100%;
-        text-shadow: $boxshadow2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: calc(100% - 40px);
+  padding: 20px;
 
+  h2 {
+    text-align: center;
+    color: $color1;
+    font-size: 40px;
+    font-weight: bold;
+    width: 100%;
+    text-shadow: $boxshadow2;
+  }
+
+  h3 {
+    width: 100%;
+  }
+  .multiselect {
+    width: 100%;
+
+    [class^="icon_"]:before, [class*=" icon_"]:before {
+        transform: scale(1.5);
+        margin-left: 10px;
     }
 
     h3 {
-        width: 100%;
+      margin: 0px 0px 10px;
     }
-   .multiselect {
-       width: 100%;
-   }
-    .inputrange {
-        width: 100%;
-        margin: 20px 0px;
+    p {
+      font-size: 14px;
+      font-style: italic;
+      margin: 0px 0px 20px;
+    }
+  }
+  .inputrange {
+    width: 100%;
+    margin: 20px 40px;
+    h3 {
+        margin-left: -40px;
+    }
     .input-range__label-container {
-        color: $color5;
+      color: $color5;
     }
     .input-range__track--active {
-        background: $color4;
+      background: $color4;
     }
     .input-range__slider {
-        background: $color4;
-        border-color: $color4;
+      background: $color4;
+      border-color: $color4;
     }
+    .input-range__label-container {
+      font-size: 14px;
+      position: relative;
+      &:after {
+        content: "'s";
+        display: block;
+        font-size: 16px;
+        position: absolute;
+        top: -2px;
+        right: -13px;
+      }
     }
-    
-    button {
-        background: $color4;
-        color: $color1;
-        border:0px;
-        box-shadow: $boxshadow2;
-        padding: 10px 40px;
-        font-size: 20px;
-        font-weight: bold;
-        margin:20px 0px;
-        cursor: pointer;
-        
-        &:hover {
-            background: $color3;
-        }
+  }
+
+  button {
+    background: $color4;
+    color: $color1;
+    border: 0px;
+    box-shadow: $boxshadow2;
+    padding: 10px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0px;
+    cursor: pointer;
+
+    &:hover {
+      background: $color3;
     }
+  }
 }

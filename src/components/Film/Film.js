@@ -35,9 +35,8 @@ const Films = (props) => {
       <div className="FilmCard">
         <Poster poster={props.poster} title={props.title} />
 
-        <div>
-          <h3>{props.type}</h3>
-          <p>{props.title}</p>
+        <div className="Hover">
+          <h3>{props.title}</h3>
         </div>
       </div>
     </Link>

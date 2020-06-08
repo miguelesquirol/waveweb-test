@@ -1,0 +1,25 @@
+@import "../../variables.scss";
+
+.StatsWrapper {
+  margin: 80px;
+  background: $color1;
+  padding: 50px;
+
+  h2 {
+    display: none;
+  }
+
+  .Discover {
+    padding: 20px 0px 80px;
+    button {
+        display: none;
+    } 
+  }
+
+  .Graphs {
+    display: flex;
+    @media only screen and (max-width: 1300px) {
+      display: block;
+     }
+}
+}

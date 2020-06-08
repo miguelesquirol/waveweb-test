@@ -35,26 +35,7 @@ class App extends Component {
     let input1, input2;
     const inputName = this.state.discover;
 
-    if (inputName === "") {
-      input1 = (
-        <div className="left">
-          <Discover
-            handleInput={this.handleInputValue}
-            handleState={this.handleStateValue}
-            pageNumber={this.state.pageNumber}
-            genresSelected={this.state.genresSelected}
-          />
-        </div>
-      );
-      input2 = (
-        <div className="right">
-          <Search
-            handleInput={this.handleInputValue}
-            handleState={this.handleStateValue}
-          />
-        </div>
-      );
-    } else if (inputName == "discover") {
+    if (inputName != "search") {
       input1 = (
         <Discover
           handleInput={this.handleInputValue}
@@ -63,9 +44,9 @@ class App extends Component {
           genresSelected={this.state.genresSelected}
         />
       );
-      input2 = "";
-    } else if (inputName == "search") {
-      input1 = "";
+    } 
+    
+    if (inputName != "discover") {
       input2 = (
         <Search
           handleInput={this.handleInputValue}

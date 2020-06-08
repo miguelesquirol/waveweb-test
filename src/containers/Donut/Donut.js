@@ -11,16 +11,17 @@ class Donut extends Component {
     let title = this.props.title;
 
     // set the dimensions and margins of the graph
-    const width = 450;
-    const height = 450;
+    const width = 270;
+    const height = 270;
     const margin = 40;
+    const divanchor = "." + this.props.class;
 
     // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
     const radius = Math.min(width, height) / 2 - margin;
 
     // append the svg object to the div called 'my_dataviz'
     const svg = d3
-      .select(".myDiv")
+      .select(divanchor)
       .append("svg")
       .attr("width", width)
       .attr("height", height)
@@ -71,23 +72,7 @@ class Donut extends Component {
     // Add the polylines between chart and labels:
 
     // Add the polylines between chart and labels:
-    svg
-      .selectAll("allLabels")
-      .data(data_ready)
-      .enter()
-      .append("text")
-      .text(function (d) {
-        console.log(d.data.key);
-        return d.data.key;
-      })
-      .attr("transform", function (d) {
-        const pos = outerArc.centroid(d);
-        return "translate(" + pos + ")";
-      })
-      .style("text-anchor", function (d) {
-        const midangle = d.startAngle + (d.endAngle - d.startAngle) / 2;
-        return midangle < Math.PI ? "start" : "end";
-      });
+   
 
     svg
       .append("text")
@@ -109,7 +94,7 @@ class Donut extends Component {
   render() {
     this.drawChart();
 
-    return <div className="myDiv"></div>;
+    return <div className={this.props.class}></div>;
   }
 }
 

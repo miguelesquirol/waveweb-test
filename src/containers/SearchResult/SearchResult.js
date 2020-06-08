@@ -14,11 +14,10 @@ const SearchResult = (props) => {
                 {
                 props.filmlist
                             ? props.filmlist.map(film => {
-                                return <div key={`film-${film.id}`} >
+                                return <div key={`film-${film.id}`} className="FilmSingle">
                                 <Films  id={film.id}
-                                        year={film.release_date}
+                                        title={film.title}
                                         poster={film.poster_path}
-                                        imdb={film.id}
                                         />
                                 </div>;
                               })
