@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import "./FilmDetails.scss";
 import "../../global.js";
+import Donut from '../../containers/Donut/Donut'
+
 
 class FilmsDetails extends Component {
-  componentDidMount() {
-    console.log(this.props.location.state.id);
+
+
+  componentDidMount() {    
     fetch(
       `https:api.themoviedb.org/3/movie/${this.props.location.state.id}?api_key=${global.apikey}&language=en-US`
     )
@@ -18,7 +21,7 @@ class FilmsDetails extends Component {
   }
 
   render() {
-    console.log(this.state.film);
+
     return (
       <div className="FilmDetails">
         <div className="LeftColumn">
@@ -48,12 +51,36 @@ class FilmsDetails extends Component {
           </p>
 
           <div>
+          
             <h2>Details</h2>
             <p>{this.state.film.overview}.</p>
           </div>
+          <div >
 
           <h2>Popularity</h2>
-          <p>{this.state.film.popularity}.</p>
+
+          <Donut 
+          partial={this.state.film.popularity} 
+          total={100}
+          scale={100}
+          title={"Popularity"}
+          />
+                    </div>
+
+
+          <div>
+          <h2>Votes</h2>
+
+          <Donut 
+          partial={this.state.film.vote_average} 
+          total={this.state.film.vote_count}
+          scale={10}
+          title={"Total Votes"}
+          />
+          </div>
+
+
+          <p>.</p>
 
           <h2>Runtime</h2>
           <p>{this.state.film.runtime}.</p>
@@ -75,6 +102,10 @@ class FilmsDetails extends Component {
     super();
     this.state = {
       film: [],
+      width: 450,
+      height: 450,
+      margin: 40,
+
     };
   }
 }

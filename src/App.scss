@@ -1,2 +1,38 @@
 @import "./variables.scss";
 
+.wraper {
+ 
+  display: flex;
+  padding: 80px;
+  flex-wrap: wrap;
+  .left,
+  .right {
+    width: 80%;
+    margin: 40px 0px;
+  }
+  .center,
+  .reset {
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .reset {
+    height: auto;
+    padding: 20px;
+    justify-content: flex-end;
+    display: flex;
+    button {
+        background: none;
+        border: none;
+        cursor:pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+  }
+
+}

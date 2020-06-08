@@ -1,0 +1,56 @@
+@import "../../variables.scss";
+
+
+.Discover {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(100% - 40px);
+    padding: 20px;
+      
+    h2 {
+        text-align: center;
+        color: $color1;
+        font-size: 40px;
+        width: 100%;
+        text-shadow: $boxshadow2;
+
+    }
+
+    h3 {
+        width: 100%;
+    }
+   .multiselect {
+       width: 100%;
+   }
+    .inputrange {
+        width: 100%;
+        margin: 20px 0px;
+    .input-range__label-container {
+        color: $color5;
+    }
+    .input-range__track--active {
+        background: $color4;
+    }
+    .input-range__slider {
+        background: $color4;
+        border-color: $color4;
+    }
+    }
+    
+    button {
+        background: $color4;
+        color: $color1;
+        border:0px;
+        box-shadow: $boxshadow2;
+        padding: 10px 40px;
+        font-size: 20px;
+        font-weight: bold;
+        margin:20px 0px;
+        cursor: pointer;
+        
+        &:hover {
+            background: $color3;
+        }
+    }
+}

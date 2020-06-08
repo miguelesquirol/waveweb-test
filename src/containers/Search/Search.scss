@@ -1,0 +1,44 @@
+@import "../../variables.scss";
+
+
+.Search {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(100% - 40px);
+    padding: 20px;
+    h2 {
+        color: $color1;
+        font-size: 40px;
+        text-align: center;
+        color: $color1;
+        text-shadow: $boxshadow2;
+    }
+
+    input {
+        width: calc(100% - 40px);
+        font-size: 16px;
+        font-weight: bold;
+        padding: 20px;
+        border: none;
+        box-shadow: $boxshadow1;
+        outline: 0px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        background: $color4;
+        color: $color1;
+        border:0px;
+        box-shadow: $boxshadow2;
+        padding: 10px 40px;
+        font-size: 20px;
+        font-weight: bold;
+        margin:20px 0px;
+        cursor: pointer;
+        
+        &:hover {
+            background: $color3;
+        }
+    }
+}
